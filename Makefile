@@ -6,7 +6,7 @@
 #    By: acocoual <acocoual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/23 18:13:39 by acocoual          #+#    #+#              #
-#    Updated: 2025/06/23 18:15:12 by acocoual         ###   ########.fr        #
+#    Updated: 2025/06/23 18:54:00 by acocoual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS += ft_putstr_len.c
 SRCS += ft_putchar_len.c
 SRCS += ft_putnbr_base_len.c
 
-NAME := ft_printf.a
+NAME := libftprintf.a
 
 CC := cc
 
