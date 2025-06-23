@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: acocoual <acocoual@student.42.fr>          +#+  +:+       +#+         #
+#    By: amandine <amandine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/23 18:13:39 by acocoual          #+#    #+#              #
-#    Updated: 2025/06/23 18:54:00 by acocoual         ###   ########.fr        #
+#    Updated: 2025/06/24 00:28:07 by amandine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS += ft_printf.c
-SRCS += ft_putstr_len.c
-SRCS += ft_putchar_len.c
-SRCS += ft_putnbr_base_len.c
+SRC += ft_printf.c
+SRC += ft_putstr_len.c
+SRC += ft_putchar_len.c
+SRC += ft_putnbr_base_len.c
 
 NAME := libftprintf.a
 
@@ -22,23 +22,24 @@ CC := cc
 CFLAGS += -Wall
 CFLAGS += -Werror
 CFLAGS += -Wextra
+CFLAGS += -g
 
 AR := ar
 
 ARFLAGS := rcs
 
-OBJS := $(SRCS:.c=.o)
+OBJ := $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	
+$(NAME) : $(OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
