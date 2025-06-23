@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acocoual <acocoual@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amandine <amandine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:45:27 by amandine          #+#    #+#             */
-/*   Updated: 2025/06/23 19:19:27 by acocoual         ###   ########.fr       */
+/*   Updated: 2025/06/23 23:06:38 by amandine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	len = 0;
 	va_start(args, format);
+	if (!format)
+		return (-1);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
