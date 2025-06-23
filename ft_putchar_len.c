@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_print.c                             :+:      :+:    :+:   */
+/*   ft_putchar_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acocoual <acocoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 17:16:12 by acocoual          #+#    #+#             */
-/*   Updated: 2025/06/23 18:16:53 by acocoual         ###   ########.fr       */
+/*   Created: 2025/06/23 18:01:17 by acocoual          #+#    #+#             */
+/*   Updated: 2025/06/23 18:16:49 by acocoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base_len(int nb, char *base, int len)
+int ft_putchar_len(char c, int len)
 {
-	long	nbr;
-	int		maxbase;
-
-	nbr = nb;
-	maxbase = ft_strlen(base);
-	if (nbr < 0)
-	{
-		len = ft_putchar_len('-', len);
-		nbr = -nbr;
-	}
-	if (nbr >= maxbase)
-		len = ft_putnbr_base_len((nbr / maxbase), base, len);
-	len = ft_putchar_len(base[nbr % maxbase], len);
+    write(1, &c, 1);
+    len++;
     return (len);
 }

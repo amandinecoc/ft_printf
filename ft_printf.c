@@ -6,7 +6,7 @@
 /*   By: acocoual <acocoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 21:45:27 by amandine          #+#    #+#             */
-/*   Updated: 2025/06/23 17:43:13 by acocoual         ###   ########.fr       */
+/*   Updated: 2025/06/23 17:59:25 by acocoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int	print_args(va_list args, const char c, int len)
 {
 	if (c == 'c')
-		len += ft_putchar_len(va_arg(args, int));
+		len += ft_putchar_len(va_arg(args, int), len);
 	else if (c == 's')
-		len += ft_putstr_len(va_arg(args, int));
+		len += ft_putstr_len(va_arg(args, int), len);
 	else if (c == 'p')
-		len += ft_putnbr_base_len(va_arg(args, int), LOW_HEXA);
+		len += ft_putnbr_base_len(va_arg(args, int), LOW_HEXA, len);
 	else if (c == 'd' || c == 'i')
-		len += ft_putnbr_base_len(va_arg(args, int), TEN);
+		len += ft_putnbr_base_len(va_arg(args, int), TEN, len);
 	else if (c == 'u')
-		len += ft_putnbr_base_len(va_arg(args, int), TEN);
+		len += ft_putnbr_base_len(va_arg(args, int), TEN, len);
 	else if (c == 'x' || c == 'X')
-		len += ft_putnbr_base_len(va_arg(args, int), LOW_HEXA);
+		len += ft_putnbr_base_len(va_arg(args, int), LOW_HEXA, len);
 	else if (c == 'X')
-		len += ft_putnbr_base_len(va_arg(args, int), UP_HEXA);
+		len += ft_putnbr_base_len(va_arg(args, int), UP_HEXA, len);
 	else if (c == '%')
 		ft_puchar('%');
 	return (len + 1);
